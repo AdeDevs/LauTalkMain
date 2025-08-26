@@ -13,6 +13,14 @@ const nextConfig = {
             {
                 source: "/create-post",
                 destination: "/home/create-post"
+            },
+            {
+                source: "/payment",
+                destination: "/home/payment"
+            },
+            {
+                source: "/manuals",
+                destination: "/home/manuals"
             }
         ]
     },

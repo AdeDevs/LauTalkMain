@@ -25,9 +25,12 @@ a {
   position: relative;
   width: 100%;
   height: 100vh;
-  border-top: 1px solid red;
-  border-bottom: 1px solid red;
+  font-family:var(--mainFont);
+  border-top: 1px solid var(--accentColor);
+  border-bottom: 1px solid var(--accentColor);
+  border-left: 1px solid var(--accentColor);
   overflow: hidden;
+  background-color: #fff;
   display: grid;
   grid-template-columns: 6% 94%;
   grid-template-rows: auto 1fr;
@@ -41,7 +44,7 @@ a {
   width: 100%;
   grid-row: 1/3;
   box-sizing: border-box;
-  border-right: 1px solid red;
+  border-right: 1px solid var(--accentColor);
   overflow: hidden;
 }
 .logo img {
@@ -51,42 +54,75 @@ a {
   min-width: 25px;
 }
 .parent .nav {
-  padding: 20px;
+  padding: 15px;
   overflow: hidden;
+  gap: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--accentColor);
 }
-.nav .links {
+.nav h1 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bgColor);
+}
+.nav .nav-links {
   gap: 40px;
 }
-.links li {
+.nav-links a {
+  color: var(--accentColor);
+  text-decoration: 1px underline transparent;
+  text-underline-offset: 0px;
+  font-weight: 500;
 }
+.nav-links a:hover {
+  text-decoration: 2px underline var(--accentColor);
+  text-underline-offset: 2px;
+}
+
 .nav .btns {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .btns form {
+  border: 1px solid var(--accentColor);
+  border-radius: 5px;
   display: flex;
-  box-sizing: border-box;
+  padding: 0 8px 0 0;
+  align-items: center;
 }
-form input {
-  padding: 6px 8px;
-  box-sizing: border-box;
+
+.btns form input {
+  border: none;
+  font-family: inherit;
+  border-radius: 5px;
+  padding: 11px;
 }
+
+#srch-btn {
+  background-image: url(/assets/search.png);
+  background-position: center;
+  background-size: cover;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .btns li {
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  padding: 3px;
+  padding: 7px 5px;
   border-radius: 5px;
   transition: all .3s ease-in-out;
 }
 .btns li:hover {
-  background-color: grey;
+  background-color: #f0f0f0;
+  cursor: pointer;
 }
 .btns li img {
   width: 25px;
@@ -119,90 +155,34 @@ form input {
   flex-direction: column;
 }
 
-.children {
-  flex: 1; /* fill parent */
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: 1fr;
-  height: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* stop scrolling here */
-}
-
-.children div {
-  box-sizing: border-box;
-}
-
-.children .side-bar {
-  height: 100%;
-  padding: 10px;
-  grid-row: 1/2;
-  border-right: 1px solid red;
-}
-
-.children .content {
-  grid-row: 1/2;
-  width: 100%;
-  display: grid;
-  box-sizing: border-box;
-  grid-template-columns: 100%;
-  grid-template-rows: auto 1fr;
-  height: 100%;
-  overflow: hidden; /* only .dos scrolls */
-}
-
-.content section {
-  box-sizing: border-box;
-}
-
-.content .uno {
-  grid-column: 1/2;
-  height: fit-content;
-  padding: 20px;
-  border-bottom: 1px solid red;
-  border-right: 1px solid red;
-}
-
-.content .dos {
-  height: 100%;
-  overflow: hidden; /* now only this one scrolls */
-  border-right: 1px solid red;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-.dos .scrollable {
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  border-right: 1px solid red;
-  overflow-y: auto; /* now only this one scrolls */
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 
 @media screen and (max-width: 850px) {
   .parent {
     grid-template-columns: 10% 90%;
   }
+  .nav .nav-links {
+    gap: 20px;
+  }
+  .nav .btns {
+    gap: 7px;
+  }
+  .btns li img {
+    width: 20px;
+  }
+  .btns form input {
+    padding: 11px;
+    width: 80px;
+  }
 }
 @media screen and (max-width: 670px) {
-  .nav .links {
+  .nav .nav-links {
     display: none;
+  }
+  .nav h1 {
+    font-size: 14px;
   }
   .parent {
     grid-template-columns: 13% 87%;
-  }
-  .children .content {
-    grid-template-columns: 1fr;
-  }
-  .children {
-    grid-template-columns: 1fr;
-  }
-  .content .tres, .children .side-bar {
-    display: none;
   }
 }
 

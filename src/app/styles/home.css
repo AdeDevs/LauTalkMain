@@ -136,25 +136,193 @@
 }
 
 
-.content .dos {
+.content .home-page {
     height: 100%;
     overflow: hidden;
     /* now only this one scrolls */
     border-right: 1px solid red;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.8fr 2fr;
 }
 
-.dos .scrollable {
+.home-page .home-main {
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
     border-right: 1px solid var(--accentColor);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     overflow-y: auto;
     scrollbar-width: none;
     &::-webkit-scrollbar {
         display: none;
     }
+}
+
+.home-main .post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+.post .post-profile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.post-profile img {
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    width: 40px;
+    border-radius: 100%;
+}
+.post-profile h1 {
+    font-size: 15px;
+    margin-right: 20px;
+    line-height: 100%;
+    font-weight: 600;
+}
+.post-profile ul li {
+    font-size: 10px;
+    font-weight: 400;
+    color: #525252;
+}
+.post-profile .follow-btn {
+    align-self: flex-start;
+    margin-top: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--accentColor);
+    font-size: 12px;
+}
+.post .post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.post-content img {
+    min-height: 400px;
+    height: 30vw;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.post-content p {
+    font-size: 14px;
+}
+.post-info .post-btns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.post-info li {
+    cursor: pointer;
+    display: flex;
+}
+.post-info span {
+    color: #636363;
+    font-weight: 400;
+    font-size: 13px;
+    display: block;
+}
+.post-info .likes-counter {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.post-info .add-cmnt {
+    border: none;
+    width: fit-content;
+    font-size: 13px;
+    padding: 5px 0;
+    font-family: inherit;
+}
+.post-info .add-cmnt:focus {
+    width: 80%;
+}
+.add-cmnt::placeholder {
+    font-size: 11px;
+}
+
+.home-page .home-suggestions {
+    padding: 20px 50px;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+}
+.home-suggestions form {
+    width: 100%;
+    border: 1px solid #d2d2d2;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 10px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.home-suggestions form img {
+    width: 100%;
+}
+.home-suggestions form button {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    overflow: hidden;
+    display: flex;
+}
+.home-suggestions form input {
+    padding: 13px 10px;
+    font-family: inherit;
+    font-size: 13px;
+    border: none;
+    width: 100%;
+}
+.home-suggestions .suggested-accnts {
+    border-radius: 20px;
+    border: 1px solid #d2d2d2;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 15px;
+}
+.suggested-accnts .sgstd-nav h1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #636363;
+    font-size: 14px;
+    font-weight: 400;
+}
+.sgstd-nav span {
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+}
+.suggested-accnts .post-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+}
+.suggested-accnts .sgstd-profile {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.sgstd-profile h1{
+    font-size: 13px;
+}
+.suggested-accnts .follow-btn {
+    background-color: var(--accentColor);
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 20px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 850px) {
@@ -174,6 +342,9 @@
     .top-bar .top-bar-extra {
         gap: 30px;
     }
+    .home-page .home-main {
+        padding: 10px;
+    }
 }
 
 @media screen and (max-width: 670px) {
@@ -183,7 +354,10 @@
     .children {
       grid-template-columns: 1fr;
     }
-    .content .tres, .children .side-bar {
+    .content .tres, .children .side-bar, .home-page .home-suggestions {
       display: none;
+    }
+    .content .home-page {
+        grid-template-columns: 1fr;
     }
   }

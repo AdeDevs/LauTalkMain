@@ -19,7 +19,7 @@ export default function HomeLayout({ children }) {
                         <li><Link href="/marketplace"><span><img src="/assets/notif.png" alt="icon" /></span>All Products</Link></li>
                         <li><a href=""><span><img src="/assets/notif.png" alt="icon" /></span>Inbox</a></li>
                         <li><a href=""><span><img src="/assets/notif.png" alt="icon" /></span>Notifications</a></li>
-                        <li><a href=""><span><img src="/assets/sell.png" alt="icon" /></span>Buying</a></li>
+                        <li><a href=""><span><img src="/assets/buy.png" alt="icon" /></span>Buying</a></li>
                         <li><a href=""><span><img src="/assets/sell.png" alt="icon" /></span>Selling</a></li>
                     </ul>
                 </section>

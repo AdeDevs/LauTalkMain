@@ -319,10 +319,17 @@
 }
 .suggested-accnts .follow-btn {
     background-color: var(--accentColor);
+    border: 1px solid transparent;
     color: #fff;
     font-size: 10px;
     padding: 5px 20px;
+    transition: all .3s ease-in-out;
     border-radius: 20px;
+}
+.suggested-accnts .follow-btn:hover {
+    background-color: transparent;
+    border-color: var(--accentColor);
+    color: var(--accentColor);
 }
 
 @media screen and (max-width: 850px) {

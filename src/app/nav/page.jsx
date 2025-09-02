@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react"
-// import NewShit from "../../../../lt_dashboard/src/app/layout"
 
 export default function NavBar() {
     const [isMenuActive, setIsMenuActive] = useState(false)

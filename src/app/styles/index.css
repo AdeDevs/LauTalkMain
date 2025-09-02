@@ -144,6 +144,85 @@ a {
   display: flex;
   box-sizing: border-box;
 }
+.profile-overlay {
+  background-color: #00000000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 888;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.profile-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+.profile-options {
+  position: absolute;
+  right: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  top: 55px;
+  overflow-y: auto;
+  border: 2px solid var(--bgColor);
+  box-shadow: 2px 2px 2px #4a4e69;
+  border-radius: 5px;
+  height: fit-content;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: all .3s ease-in-out;
+}
+.profile-options.active {
+  opacity: 1;
+  visibility: visible;
+}
+.profile-options ul {
+  flex-direction: column;
+  gap: 13px;
+}
+.profile-options ul a {
+  text-decoration: 2px underline transparent;
+  text-underline-offset: 0px;
+  display: flex;
+  font-weight: 500;
+  gap: 5px;
+}
+.profile-options ul .log-btn {
+  background-color: var(--bgColor);
+  color: #fff;
+  padding: 8px 10px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.profile-options ul a:hover {
+  color: var(--accentColor);
+  text-decoration-color: var(--accentColor);
+  text-underline-offset: 3px;
+}
+.profile-options ul .log-btn:hover {
+  color: var(--bgColor);
+  text-decoration-color: transparent;
+  border-color: var(--bgColor);
+  background-color: transparent;
+}
+.profile-options span {
+  display: inline-flex;
+  align-items: center;
+}
+.profile-options span img{
+  height: fit-content;
+  width: 20px;
+}
+.profile-options .log-btn span img {
+  width: 14px;
+}
 
 
 .parent .oga {

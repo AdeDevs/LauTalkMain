@@ -1,0 +1,189 @@
+.profile-page {
+    fill: 1;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.profile-page .profile-side-bar {
+    border-right: 1px solid var(--accentColor);
+    height: 100%;
+    padding: 10px;
+    grid-row: 1/2;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.profile-side-bar .profile-btn {
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 15px 5px 15px 20px;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    background-color: var(--bgColor);
+    margin-bottom: 30px;
+}
+.profile-side-bar .profile-btn:hover {
+    background-color: transparent;
+    border-color: var(--bgColor);
+    color: var(--bgColor);
+}
+.profile-side-bar h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--bgColor);
+}
+.profile-side-bar ul a {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--accentColor);
+    text-decoration: 1px underline transparent;
+    text-underline-offset: 1px;
+}
+.profile-side-bar ul a:hover {
+    text-decoration: 2px underline var(--accentColor);
+    text-underline-offset: 2px;
+}
+.profile-side-bar span {
+    display: inline-flex;
+    margin-right: 5px;
+}
+.profile-side-bar span img {
+    width: 18px;
+    height: fit-content;
+}
+
+.profile-content {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    fill: 1;
+}
+
+.profile-content .profile-home {
+    height: 100%;
+    display: grid;
+    fill: 1;
+    grid-auto-rows: auto 1fr;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.profile-home .profile-top-bar {
+    height: fit-content;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--accentColor);
+    font-size: 15px;
+    color: #525252;
+}
+.profile-top-bar p {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--bgColor);
+}
+.profile-top-bar .top-bar-extra {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.top-bar-extra img {
+    width: 10px;
+}
+.top-bar-extra li {
+    display: flex;
+    gap: 5px;
+    font-weight: 400;
+}
+.top-bar-extra .ellip {
+    font-weight: 800;
+}
+.profile-home .profile-main {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 15px;
+}
+.profile-main .profile-welcome {
+    margin:  auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 2em;
+    box-sizing: border-box;
+    text-align: center;
+}
+.profile-welcome h1 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--accentColor);
+}
+.profile-welcome p {
+    font-size: .6em;
+}
+.profile-welcome a {
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .55em;
+    background-color: var(--accentColor);
+    padding: 15px 40px;
+    border: 2px solid transparent;
+    width: fit-content;
+}
+.profile-welcome a:hover {
+    background-color: transparent;
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+}
+
+@media screen and (max-width: 850px) {
+    .profile-page {
+        grid-template-columns: 25% 75%;
+    }
+    .profile-side-bar .profile-btn {
+        font-size: 14px;
+    }
+    .profile-side-bar h1 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .profile-page {
+        grid-template-columns: 1fr;
+    }
+    .profile-page .profile-side-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile-main .profile-welcome {
+        font-size: 1.7em;
+    }
+    .profile-welcome a {
+        padding: 15px 30px;
+    }
+}

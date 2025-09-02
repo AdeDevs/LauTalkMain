@@ -93,8 +93,7 @@
 }
 
 
-.children .content {
-    grid-row: 1/2;
+.children .content, .profile-page .content {
     width: 100%;
     display: grid;
     box-sizing: border-box;
@@ -175,6 +174,7 @@
     height: 40px;
     object-fit: cover;
     object-position: center;
+    min-width: 40px;
     width: 40px;
     border-radius: 100%;
 }
@@ -248,7 +248,7 @@
 }
 
 .home-page .home-suggestions {
-    padding: 20px 50px;
+    padding: 20px ;
     overflow-y: auto;
     height: 100%;
     box-sizing: border-box;
@@ -306,13 +306,18 @@
 .suggested-accnts .post-profile {
     display: flex;
     align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 10px;
     justify-content: space-between;
-    gap: 7px;
 }
 .suggested-accnts .sgstd-profile {
     display: flex;
     align-items: center;
     gap: 7px;
+}
+.sgstd-profile ul {
+    width: fit-content;
 }
 .sgstd-profile h1{
     font-size: 13px;
@@ -322,7 +327,8 @@
     border: 1px solid transparent;
     color: #fff;
     font-size: 10px;
-    padding: 5px 20px;
+    align-self: flex-end;
+    padding: 5px 10px;
     transition: all .3s ease-in-out;
     border-radius: 20px;
 }
@@ -349,19 +355,26 @@
     .top-bar .top-bar-extra {
         gap: 30px;
     }
+
+    .content .home-page {
+        grid-template-columns: 1fr;
+    }
     .home-page .home-main {
         padding: 10px;
     }
+    .home-page .home-suggestions {
+        display: none;
+      }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 750px) {
     .children .content {
       grid-template-columns: 1fr;
     }
     .children {
       grid-template-columns: 1fr;
     }
-    .content .tres, .children .side-bar, .home-page .home-suggestions {
+    .content .tres, .children .side-bar {
       display: none;
     }
     .content .home-page {

@@ -266,7 +266,7 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-.btns li, .btns {
+.btns li, .btns, .btns form {
   display: none;
 }
 .btns .avt {

@@ -275,4 +275,7 @@ a {
 .btns input {
   padding: 5px 8px;
 }
+.profile-options ul a {
+  font-size: 13px;
+}
 }
